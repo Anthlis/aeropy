@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}AeroPy 2.0{% endblock %}
+
+{% block page_content %}
+
+<div class="container-fluid">
+    <h3><font color="blue">Python Flask Algorithm Test</font></h3>
+    <p>(Needs jQuery/AJAX to auto-refresh screen).</p>
+    <p>1) Enter a number 1-10 in the box below.</p>
+	<p>2) Select a number 1-5 from the dropdown box.</p>
+	<p>3) Press Submit.</p>
+	<form method="POST">
+	    <input type="text" name="first" value="">
+	    <select name="second">
+	        <option value="1" selected>1</option>
+	        <option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+
+		<input type="submit" value="Submit">
+			{% if result %}
+			    <p><br><mark>
+			    <!--
+			    <label name='first'>First value entered: {{ first }}</label><br>
+	            <label name='second'>Second value entered: {{ second }}</label><br>
+	            -->
+			    <label name='result'>Answer is: {{ result }}</label>
+			    </mark></p>
+			{% endif %}
+			{% if error %}
+			    <p>
+			    <label name="error">{{ error }}</label>
+			    </p>
+			{% endif %}
+	</form>
+
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+

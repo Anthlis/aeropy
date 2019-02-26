@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}AeroPy 2.0{% endblock %}
+
+{% block page_content %}
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+    <h3><font color="blue">Maths 1: Simple floating point number entry</font></h3>
+    <p>1) Enter number (e.g. 1.2, the Equals (expect an answer sin(1.2) = 0.932039085967</p>
+    <form method=post action="">
+        Hello, World! The sine of {{ form.r }}
+        <input type=submit value=equals>
+    </form>
+</div>
+</div>
+
+{% endblock %}
+

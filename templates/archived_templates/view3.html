@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}AeroPy 2.0{% endblock %}
+
+{% block page_content %}
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+    <h3><font color="blue">Maths 3: Multiple Inputs!</font></h3>
+    <br>
+    <form method=post action="">
+    <table>
+        {% for field in form %}
+            <tr>
+            <td>{{ field.name }}</td><td>{{ field(size=12)  }}</td>
+            <td>{{ field.label }}</td>
+            {% if field.errors %}
+                <td><ul class=errors>
+                    {% for error in field.errors %}
+                    <li><font color="red">{{ error }}</font></li>
+                {% endfor %}</ul></td>
+            {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    <p><input type=submit value=Compute></form></p>
+    <p>
+    {% if result != None %}
+    <img src="{{ result }}" width="500">
+    {% endif %}
+    </p>
+</div>
+</div>
+
+{% endblock %}

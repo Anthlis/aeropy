@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}AeroPy 2.0{% endblock %}
+
+{% block page_content %}
+
+<!-- https://www.tutorialspoint.com/flask/flask_sending_form_data_to_template.htm -->
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+    <h3><font color="blue">Data to Template Testing Area</font></h3>
+
+    <form method = "POST">
+         <p>Name <input type = "text" name = "Name" /></p>
+         <p>Variable 1 <input type = "text" name = "Variable1" /></p>
+         <p>Variable 2 <input type = "text" name = "Variable2" /></p>
+         <p>Variable 3 <input type ="text" name = "Variable3" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+    </form>
+</div>
+
+{% endblock %}
+
+
+

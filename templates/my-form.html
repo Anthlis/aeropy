@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}AeroPy 2.0{% endblock %}
+
+{% block page_content %}
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+    <h3><font color="blue">Form Testing Area</font></h3>
+
+    <p>1) Enter text, then Submit</p>
+
+
+	<form method="POST">
+	    <input name="text">
+
+<!--
+	    <div class="form-group">
+	        <label for="text">Enter Text:</label>
+	        <textarea class="form-control" rows="5" id="text"></textarea>
+	    </div>
+-->
+	    <input type="submit">
+	</form>
+</div>
+
+{% endblock %}
+

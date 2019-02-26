@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+
+
+  <head>
+    <title>Flask Template Example</title>
+    <style type="text/css">
+      .container {
+        max-width: 500px;
+        padding-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h2>Top of template</h2>
+        <br>
+        <h3> This is the start of Page 1 content</h3>
+        <br>
+        <p>My string: {{my_string}}</p>
+        <p>Value from the list: {{my_list[3]}}</p>
+        <p>Loop through the list:</p>
+        <ul>
+            {% for n in my_list %}
+            <li>{{n}}</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <br>
+        {% block content %}{% endblock }
+        <h2>Base of template</h2>
+    </div>
+  </body>
+
+
+{% endblock %}
