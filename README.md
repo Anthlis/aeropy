@@ -4,10 +4,15 @@ This repo is a copy of the files deployed as a Flask web application on www.pyth
 
 ### What is this repository for? ###
 
-* Quick summary - As above
-* Version - In development. No major/minor versions defined yet. 
-* Note to self: [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
+* A sandpit of project ideas to learn Python programming with. 
+* Development - not perfected code
+* Coming soon: 
+    - Flying Weather report
+    - Currency checker
+    - Logbook API
+    - Compass turns mental maths checker
+    - Navigation PLOG worker
+    
 ### How do I get set up? ###
 
 * www.pythonanywhere.com
@@ -17,12 +22,3 @@ This repo is a copy of the files deployed as a Flask web application on www.pyth
 * No test regime employed (yet)
 * To deploy, reload web on pythonanywhere
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* me
