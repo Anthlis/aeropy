@@ -12,6 +12,7 @@ from compute import compute
 from model import InputForm
 from compute2 import compute2
 from model2 import InputForm2
+import pyjokes
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -19,7 +20,8 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
-    return render_template('initial.html')
+    joke = pyjokes.get_joke()
+    return render_template('initial.html', joke=joke)
 
 
 @app.route('/favicon.ico')
