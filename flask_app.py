@@ -21,8 +21,8 @@ Bootstrap(app)
 @app.route('/')
 def index():
     # joke = pyjokes.get_joke()
-    joke = 'test string'
-    return render_template('initial.html', joke=joke)
+    # joke = 'test string'
+    return render_template('initial.html')
 
 
 @app.route('/favicon.ico')
