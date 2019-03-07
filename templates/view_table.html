@@ -28,8 +28,9 @@ u(t) = Ae^{-bt}\sin (w t), \hbox{ for } t\in [0,T]
 <br>
 <br>
 <form method=post action="">
+
 <table> <!-- table with forms to the left and plot to the right -->
-<tr><td>
+
 <table>
   {% for field in form %}
     <tr>
@@ -41,20 +42,22 @@ u(t) = Ae^{-bt}\sin (w t), \hbox{ for } t\in [0,T]
         <li><font color="red">{{ error }}</font></li>
       {% endfor %}</ul></td>
     {% endif %}
-    </tr>
+
   {% endfor %}
 </table>
-</td>
+
 
 <td>
 <p>
 {% if result != None %}
+    <br>
+    <br>
 <img src="{{ result }}" width="500">
 {% endif %}
 </p>
 </td></tr>
 <tr>
-<!-- <td><p><input type=submit value=Compute></p></td> -->
+
 </tr>
 </table>
 <br>

@@ -1,18 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}AeroPy NZCH Wx{% endblock %}
+{% block title %}NZCH Wx{% endblock %}
 
 {% block page_content %}
 <div class="container-fluid">
-    <h3><font color="blue">AeroPy Weather Report</font></h3>
+    <h3>AeroPy Weather Report</h3>
     <p>Gets the current NZCH TAF and METAR </p>
-    <!--<form method="POST">
-	<input type="submit" value="Submit">
-	<br>
-	<button type="button" class="btn btn-info">Get the weather</button>
-	<div class="jumbotron jumbotron-fluid">
-        <div class="container">
-        <p class="lead"> -->
 
         {% if soupLines %}
 	    <p>

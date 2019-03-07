@@ -5,7 +5,7 @@
 {% block page_content %}
 
 <div class="container-fluid">
-    <h3><font color="blue">Python Flask Algorithm Test</font></h3>
+    <h3>Python Flask Algorithm Test</h3>
     <p></p>
     <p>1) Enter a number 1-10 in the box below.</p>
 	<p>2) Select a number 1-5 from the dropdown box.</p>
@@ -23,10 +23,10 @@
 		<input type="submit" value="Submit">
 			{% if result %}
 			    <p><br><mark>
-			    <!--
-			    <label name='first'>First value entered: {{ first }}</label><br>
-	            <label name='second'>Second value entered: {{ second }}</label><br>
-	            -->
+
+                    {{ first }}
+                    {{ second }}
+
 			    <label name='result'>Answer is: {{ result }}</label>
 			    </mark></p>
 			{% endif %}

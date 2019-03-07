@@ -13,6 +13,7 @@ from model import InputForm
 from compute2 import compute2
 from model2 import InputForm2
 import pyjokes
+from datetime import datetime
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -21,7 +22,8 @@ Bootstrap(app)
 @app.route('/')
 def index():
     joke = pyjokes.get_joke()
-    return render_template('initial.html', joke=joke)
+    time = 'Last updated > ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return render_template('initial.html', joke=joke, time=time)
 
 
 @app.route('/favicon.ico')
