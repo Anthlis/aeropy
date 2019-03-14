@@ -89,6 +89,32 @@ def AeroPyWx():
         strings.append(font.string)
     return render_template('AeroPyWx.html', soupLines=strings)
 
+@app.route('/dev')
+def dev():
+    return render_template('dev.html')
+
+@app.route("/Compass", methods=['GET', 'POST'])
+def compass():
+    result = 0
+    error = ''
+
+    if request.method=='POST':
+        # get the form data
+        first = request.form['first']
+        second = request.form['second']
+
+        if first and second:
+            try:
+                # do your validation or logic here...
+                if int(first) > 360:
+                    raise ValueError
+                result = int(first) - int(second)
+            except ValueError:
+                # you may pass custom error message as you like
+                error = 'You entered a value > 360 degrees'
+    # you render the template and pass the context result & error
+    return render_template('Compass.html', result=result, error=error)
+
 
 # View
 @app.route('/view_input', methods=['GET', 'POST'])

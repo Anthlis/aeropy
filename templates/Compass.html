@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}AeroPy 2.0{% endblock %}
+
+{% block page_content %}
+
+<div class="container-fluid">
+    <h3>Compass Turns Practice</h3>
+    <p></p>
+    <p>1) Enter a heading: </p>
+	<p>2) Enter a bearing to turn on to: </p>
+	<p>3) Press Submit.</p>
+	<form method="POST">
+	    <input type="text" name="first" value="">
+        <input type="text" name="second" value="">
+
+		<input type="submit" value="Submit">
+			{% if result %}
+			    <p><br><mark>
+
+                    {{ first }}
+                    {{ second }}
+
+			    <label name='result'>Answer is: {{ result }}</label>
+			    </mark></p>
+			{% endif %}
+			{% if error %}
+			    <p>
+			    <label name="error">{{ error }}</label>
+			    </p>
+			{% endif %}
+	</form>
+
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
