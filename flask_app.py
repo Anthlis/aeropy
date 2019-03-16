@@ -64,14 +64,14 @@ def calculation():
     result = 0
     error = ''
     # you may want to customize your GET... in this case not applicable
-    if request.method=='POST':
+    if request.method == 'POST':
         # get the form data
         first = request.form['first']
         second = request.form['second']
         if first and second:
             try:
                 # do your validation or logic here...
-                if int(first)>10 or int(first)<1:
+                if int(first) > 10 or int(first) < 1:
                     raise ValueError
                 result = int(first) + int(second)
             except ValueError:
@@ -102,25 +102,83 @@ def dev():
 
 @app.route("/Compass", methods=['GET', 'POST'])
 def compass():
+    '''
+    enter hdg_start
+    enter hdg_end to turn on to
+    if hdg_end
+
+
+    :return:
+    '''
+
+
     result = 0
+    turn = ''
+    first = ''
+    second = ''
+    hdg_s = ''
+    hdg_e = ''
     error = ''
 
-    if request.method=='POST':
-        # get the form data
+    if request.method == 'POST':
+
         first = request.form['first']
         second = request.form['second']
 
+        hdg_s = int(first)
+        hdg_e = int(second)
+
+        if hdg_s == 0 and hdg_e > 180:
+            hdg_s = 360
+
+            if hdg_s - hdg_e < 180:
+
+                result = hdg_s - hdg_e
+                turn = 'left'
+
+            else:
+                result = hdg_s + hdg_e
+                turn = 'right'
+
+        else:
+            result = 'fail'
+            turn = 'north'
+
+
+
+
+
+
+
+        '''
+
         if first and second:
             try:
-                # do your validation or logic here...
+
                 if int(first) > 360:
                     raise ValueError
-                result = int(first) - int(second)
+
+
+
+
             except ValueError:
-                # you may pass custom error message as you like
-                error = 'You entered a value > 360 degrees'
-    # you render the template and pass the context result & error
-    return render_template('Compass.html', result=result, error=error)
+                # pass whatever custom error message required
+                error = 'Error: You entered a value > 360 degrees. Try again.'
+
+            degrees = int(first) - int(second)
+            if degrees < 0:
+                result = degrees + 360
+                turn = 'left'
+            elif:
+                degrees > 360:
+                result = degrees - 360
+                
+        '''
+
+
+
+
+    return render_template('Compass.html', first=hdg_s, second=second, result=result, turn=turn, error=error)
 
 
 # View
@@ -147,7 +205,7 @@ def view2():
     return render_template("view2.html", form=form, s=s)
 
 # View_3
-@app.route('/view_table', methods=['GET', 'POST'])  #changed from /view3
+@app.route('/view_table', methods=['GET', 'POST'])
 def view3():
     form = InputForm2(request.form)
     if request.method == 'POST' and form.validate():
@@ -156,7 +214,7 @@ def view3():
     else:
         result = None
 
-    return render_template('view_table.html', form=form, result=result) # changed from view3.html
+    return render_template('view_table.html', form=form, result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

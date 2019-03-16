@@ -18,10 +18,11 @@
 			{% if result %}
 			    <p><br><mark>
 
-                    {{ first }}
-                    {{ second }}
+                    <label name='hdg_1'>Heading (start) is: {{ first }}</label><br>
+                    <label name='hdg_2'>Heading (end) is: {{ second }}</label><br>
+                    <label name='result'>Answer is: {{ result }}</label><br>
+                    <label name='turn'>You should turn: {{ turn }}</label><br>
 
-			    <label name='result'>Answer is: {{ result }}</label>
 			    </mark></p>
 			{% endif %}
 			{% if error %}
