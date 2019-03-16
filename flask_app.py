@@ -21,9 +21,13 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
+    return render_template('initial.html')
+
+@app.route('/pyjokes')
+def pyjoke():
     joke = pyjokes.get_joke()
     time = 'Last updated > ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    return render_template('initial.html', joke=joke, time=time)
+    return render_template('pyjokes.html', joke=joke, time=time)
 
 
 @app.route('/favicon.ico')
@@ -87,7 +91,10 @@ def AeroPyWx():
     strings = []
     for font in soup.findAll('font'):
         strings.append(font.string)
-    return render_template('AeroPyWx.html', soupLines=strings)
+
+    time = 'Last updated > ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    return render_template('AeroPyWx.html', soupLines=strings, time=time)
 
 @app.route('/dev')
 def dev():
