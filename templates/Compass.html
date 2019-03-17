@@ -22,16 +22,16 @@
 
                     <label name='hdg_1'>Heading (start) is: {{ first }}</label><br>
                     <label name='hdg_2'>Heading (end) is: {{ second }}</label><br>
-                    <label name='result'>Answer is: {{ degrees }}</label><br>
+                    <label name='result'>You should turn: {{ angle }}</label><br>
                     <label name='turn'>You should turn: {{ turn }}</label><br>
 
 			    </mark></p>
-			{% endif %}
-			{% if error %}
-			    <p>
-			    <label name="error">{{ error }}</label>
-			    </p>
-			{% endif %}
+            {% endif %}
+    	{% if error %}
+	    <p>
+	    <label name="error">{{ error }}</label>
+	    </p>
+	    {% endif %}
 	</form>
 
 </form>

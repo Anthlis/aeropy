@@ -102,45 +102,47 @@ def dev():
 
 @app.route("/Compass", methods=['GET', 'POST'])
 def compass():
-
     turn = ''
     error = ''
-    # h1, h2 = 0
-
+    angle = 0
     if request.method == 'POST':
-
-        first = request.form['first']
-        second = request.form['second']
-
-
-
+        first = int(request.form['first'])
+        second = int(request.form['second'])
         if first and second:
-            h1 = int(first)
-            h2 = int(second)
-
-            try:
-                if h1 or h2 > 360:
-                    raise ValueError
-
-                if h1 - h2 < 0:
-                    angle_1 = abs(h1 - h2)
-                    if h1 < h2 and h2 < angle_1:
-                        turn = 'turn left'
-                    else:
-                        turn = 'turn right'
-                else:
-                    angle_1 = h1 - h2
-
-                    if angle_1 < 180:
-                        turn = 'left turn'
-                    else:
-                        turn = 'right turn'
-
-            except ValueError:
-                error = 'Error: You entered a value > 360 degrees. Try again.'
-
-
-    return render_template('Compass.html', turn=turn, error=error)
+            angle = 45
+            turn = ' turn right'
+            # try:
+            #     # angle = 0
+            #     if first or second > 360:
+            #         raise ValueError
+            #     if first - second < 0:
+            #         angle = abs(first - second)
+            #         if first < second and second < angle:
+            #             turn = 'turn left'
+            #         else:
+            #             turn = 'turn right'
+            #     else:
+            #         angle = first - second
+            #         if angle < 180:
+            #             turn = 'left turn'
+            #         else:
+            #             turn = 'right turn'
+            # except ValueError:
+            #     error = 'Error: You entered a value > 360 degrees. Try again.'
+            # else:
+            # if first - second < 0:
+            #     angle = abs(first - second)
+            #     if first < second and second < angle:
+            #         turn = 'turn left'
+            #     else:
+            #         turn = 'turn right'
+            # else:
+            #     angle = first - second
+            #     if angle < 180:
+            #         turn = 'left turn'
+            #     else:
+            #         turn = 'right turn'
+    return render_template('Compass.html', angle=angle, turn=turn, error=error)
 
 
 # View
