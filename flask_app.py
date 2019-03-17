@@ -102,83 +102,45 @@ def dev():
 
 @app.route("/Compass", methods=['GET', 'POST'])
 def compass():
-    '''
-    enter hdg_start
-    enter hdg_end to turn on to
-    if hdg_end
 
-
-    :return:
-    '''
-
-
-    result = 0
     turn = ''
-    first = ''
-    second = ''
-    hdg_s = ''
-    hdg_e = ''
     error = ''
+    # h1, h2 = 0
 
     if request.method == 'POST':
 
         first = request.form['first']
         second = request.form['second']
 
-        hdg_s = int(first)
-        hdg_e = int(second)
 
-        if hdg_s == 0 and hdg_e > 180:
-            hdg_s = 360
-
-            if hdg_s - hdg_e < 180:
-
-                result = hdg_s - hdg_e
-                turn = 'left'
-
-            else:
-                result = hdg_s + hdg_e
-                turn = 'right'
-
-        else:
-            result = 'fail'
-            turn = 'north'
-
-
-
-
-
-
-
-        '''
 
         if first and second:
-            try:
+            h1 = int(first)
+            h2 = int(second)
 
-                if int(first) > 360:
+            try:
+                if h1 or h2 > 360:
                     raise ValueError
 
+                if h1 - h2 < 0:
+                    angle_1 = abs(h1 - h2)
+                    if h1 < h2 and h2 < angle_1:
+                        turn = 'turn left'
+                    else:
+                        turn = 'turn right'
+                else:
+                    angle_1 = h1 - h2
 
-
+                    if angle_1 < 180:
+                        turn = 'left turn'
+                    else:
+                        turn = 'right turn'
 
             except ValueError:
-                # pass whatever custom error message required
                 error = 'Error: You entered a value > 360 degrees. Try again.'
 
-            degrees = int(first) - int(second)
-            if degrees < 0:
-                result = degrees + 360
-                turn = 'left'
-            elif:
-                degrees > 360:
-                result = degrees - 360
-                
-        '''
 
-
-
-
-    return render_template('Compass.html', first=hdg_s, second=second, result=result, turn=turn, error=error)
+    return render_template('Compass.html', turn=turn, error=error)
 
 
 # View

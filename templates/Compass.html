@@ -8,19 +8,21 @@
     <h3>Compass Turns Practice</h3>
     <p></p>
     <p>1) Enter a heading: </p>
-	<p>2) Enter a bearing to turn on to: </p>
-	<p>3) Press Submit.</p>
-	<form method="POST">
+    <form method="POST">
 	    <input type="text" name="first" value="">
+	<p>2) Enter a bearing to turn on to: </p>
+
+    <form method="POST">
         <input type="text" name="second" value="">
 
-		<input type="submit" value="Submit">
+        <p>3) Press Submit.</p>
+        <input type="submit" value="Submit">
 			{% if result %}
 			    <p><br><mark>
 
                     <label name='hdg_1'>Heading (start) is: {{ first }}</label><br>
                     <label name='hdg_2'>Heading (end) is: {{ second }}</label><br>
-                    <label name='result'>Answer is: {{ result }}</label><br>
+                    <label name='result'>Answer is: {{ degrees }}</label><br>
                     <label name='turn'>You should turn: {{ turn }}</label><br>
 
 			    </mark></p>
