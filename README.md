@@ -13,7 +13,7 @@ AeroPy is a small Flask app to aid the preparation of flight navigation tasks fo
     - Navigation PLOG worker, 
     	(The hard one - implementing a maths wind triangle into Flask WTF-forms, working out headings, bearings, S/D/T problems.
 
-This repo is a copy of the files deployed as a Flask web application on www.pythonanywhere.com as faifieldlabs.pythonanywhere.com.
+This repo is a copy of the files deployed as a Flask web application on www.pythonanywhere.com as https://fairfieldlabs.pythonanywhere.com/.
 
 ### Install
 
