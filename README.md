@@ -2,7 +2,7 @@
 
 ### What is it?
 
-Small Flask app to aid with private flying flight navigation preparation. Not for operational use, but purely as a theme to develop my understanding of Python and the Flask web framework.
+AeroPy is a small Flask app to aid with private flying flight navigation preparation. Not for operational use, but purely as a theme to develop my understanding of Python and the Flask web framework.
 
 * In development: 
     - Flying Weather report
