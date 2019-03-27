@@ -5,6 +5,19 @@
 {% block page_content %}
 <div class='page_header'>
     <h1>AeroPy - a flight planning web application</h1>
+    <h2>AeroPy</h2>
+<p>What is it?
+AeroPy is a small Flask app to aid the preparation of flight navigation tasks for private flying. That is; get the weather, do weight and balance checks and plan the navigation route. Not for operational use, but purely as a theme to develop my understanding of Python and the Flask web framework.
+
+In development:
+Flying Weather report, get NZCH TAF & METAR reports and plot a windrose diagram for the wind direction and strength.
+Weight and Balance calculations for ZK-EBZ and check within limits defined by a plot diagram.
+Currency checker (add 90days from last flight and compare with today), currency in doing manoeuvers etc.
+Logbook API, for checking how many hours in a particular aircraft type or rego or how many hours flown since last BFR.
+Compass turns mental maths checker
+Navigation PLOG worker, (The hard one - implementing a maths wind triangle into Flask WTF-forms, working out headings, bearings, S/D/T problems.</p>
+    
+
 
 </div>
 {% endblock %}
