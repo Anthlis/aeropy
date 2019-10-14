@@ -5,33 +5,36 @@
 {% block page_content %}
 
 <div class="container-fluid">
-    <h3>Compass Turns Practice</h3>
+    <h3>Python Flask Algorithm Test</h3>
     <p></p>
-    <p>1) Enter a heading: </p>
-    <form method="POST">
+    <p>1) Enter a number 1-10 in the box below.</p>
+	<p>2) Select a number 1-5 from the dropdown box.</p>
+	<p>3) Press Submit.</p>
+	<form method="POST">
 	    <input type="text" name="first" value="">
-	<p>2) Enter a bearing to turn on to: </p>
+	    <select name="second">
+	        <option value="1" selected>10</option>
+	        <option value="2">20</option>
+			<option value="3">33</option>
+			<option value="4">40</option>
+			<option value="5">50</option>
+		</select>
 
-    <form method="POST">
-        <input type="text" name="second" value="">
-
-        <p>3) Press Submit.</p>
-        <input type="submit" value="Submit">
+		<input type="submit" value="Submit">
 			{% if result %}
 			    <p><br><mark>
 
-                    <label name='hdg_1'>Heading (start) is: {{ first }}</label><br>
-                    <label name='hdg_2'>Heading (end) is: {{ second }}</label><br>
-                    <label name='result'>You should turn: {{ angle }}</label><br>
-                    <label name='turn'>You should turn: {{ turn }}</label><br>
+                    {{ first }}
+                    {{ second }}
 
+			    <label name='result'>Answer is: {{ result }}</label>
 			    </mark></p>
-            {% endif %}
-    	{% if error %}
-	    <p>
-	    <label name="error">{{ error }}</label>
-	    </p>
-	    {% endif %}
+			{% endif %}
+			{% if error %}
+			    <p>
+			    <label name="error">{{ error }}</label>
+			    </p>
+			{% endif %}
 	</form>
 
 </form>
