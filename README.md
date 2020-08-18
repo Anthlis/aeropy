@@ -17,8 +17,8 @@ This repo is a copy of the files deployed as a Flask web application on www.pyth
 
 ### Install
 
-	$ python3 -m venv venv && source venv/bin/activate
-	$ pip install -r requirements.txt
+	$ python3 -m venv venv
+	(venv) $ pip install -r requirements.txt
 
 ### Run 
 
@@ -27,7 +27,5 @@ This repo is a copy of the files deployed as a Flask web application on www.pyth
 
 ### Tests 
 
-(Still learning about this - placeholder only - no test file exists to run yet)
-
-	python -m unittest test/test_app.py
+(Still learning how to test Flask apps with PyTest - placeholder only - no test file exists to run yet)
  
